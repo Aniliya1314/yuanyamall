@@ -1,0 +1,60 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.btn-order {
+    width: 164.05rpx;
+    height: 65.62rpx;
+    font-size: 28.12rpx;
+    float: right;
+    padding: 0;
+    margin-left: 35.15rpx;
+}
+.btn-hollow-gray {
+  border: 1px solid #d6d6d6;
+  background: #fff;
+}
+
+.btn-solid-red {
+  background: #ff2d4b;
+  color: #fff;
+}
+.good-thumb {
+    width: 175.77rpx;
+    height: 175.77rpx;
+    border: 1px solid #d6d6d6;
+    float: left;
+    margin-left: 18.74rpx;
+}
+.menu-item{  
+  width: 32%;  
+  float: left;  
+  text-align: center;  
+  padding-top: 8px;  
+}  
+.menu-item1{  
+  width: 24%;  
+  float: left;  
+  text-align: center;  
+  padding-top: 8px;  
+}  
+.img{ 
+  width: 23px;  
+  height: 23px;  
+  display: block;  
+  margin:auto;  
+}  
+.clear{  
+  clear: both;  
+}  
+.tab-bar{  
+  position: fixed;  
+  width: 100%;  
+  padding: 0px 2%;  
+} 

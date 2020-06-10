@@ -1,0 +1,77 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/live/live",
+    "pages/live/liveol/liveol",
+    "pages/logs/logs",
+    "pages/ShoppingCart/sc",
+    "pages/classifyTabs/classifyTabs",
+    "pages/PersonalCenter/mine",
+    "pages/PersonalCenter/order/order",
+    "pages/searchPage/searchPage",
+    "pages/ShoppingOrder/so",
+    "pages/address/address",
+    "pages/home/selfSupport/selfSupport",
+    "pages/selfSupport/selfSupport",
+    "pages/PersonalCenter/index",
+    "pages/PersonalCenter/cardpackage/cardpackage",
+    "pages/PersonalCenter/zeroget/zeroget",
+    "pages/PersonalCenter/groupget/groupget",
+    "pages/PersonalCenter/identitycard/identitycard",
+    "pages/PersonalCenter/messagecenter/messagecenter",
+    "pages/PersonalCenter/helporserver/helporserver",
+    "pages/PersonalCenter/scoremarket/scoremarket",
+    "pages/PersonalCenter/vip/vip",
+    "pages/PersonalCenter/mesorder/mesorder",
+    "pages/searchResult/searchResult",
+    "pages/goodDetails/goodDetails",
+    "pages/addressList/addressList",
+    "pages/index/index",
+    "pages/store/store",
+    "pages/PersonalCenter/logistics/logistics"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f0145a",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white"
+  },
+   "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#f0145a",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "image/home-uncheck.png",
+        "selectedIconPath": "image/home-check.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/live/live",
+        "iconPath": "image/live-uncheck.png",
+        "selectedIconPath": "image/live-check.png",
+        "text": "直播"
+      },
+      {
+        "pagePath": "pages/classifyTabs/classifyTabs",
+        "iconPath": "image/search-unchock.png",
+        "selectedIconPath": "image/search-chock.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/ShoppingCart/sc",
+        "iconPath": "image/shoppingcart-uncheck.png",
+        "selectedIconPath": "image/shoppingcart-check.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/PersonalCenter/mine",
+        "iconPath": "image/personal-uncheck.png",
+        "selectedIconPath": "image/personal-check.png",
+        "text": "个人中心"
+      }
+    ]
+  }
+}
