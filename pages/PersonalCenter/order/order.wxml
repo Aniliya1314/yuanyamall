@@ -1,0 +1,190 @@
+<!--pages/order/order.wxml-->
+ <view class="swiper-tab">
+ <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0"  bindtap="clicktab" style="background:#fff">
+    待付款
+    </view>
+     <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1"  bindtap="clicktab" style="background:#fff">
+    待接单
+  </view>
+   <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2"  bindtap="clicktab" style="background:#fff">
+    待收货
+  </view >
+   <view class="swiper-tab-item {{currentTab==3?'active':''}}" data-current="3"  bindtap="clicktab" style="background:#fff">
+    全部订单
+  </view>
+  </view>
+  <swiper current="{{currentTab}}" duration="300"  bindchange="swiperTab">
+
+    <!--待付款 -->
+    <swiper-item class="out">
+      <scroll-view scroll-y scroll-into-view='item1'>
+      <block wx:for="{{goods}}">
+        <view wx:if="{{item.orderstate==0}}">
+          <view class="order-cell item">
+              <view class="cell-count">
+                <view class="count-amount">订单号：{{item.ordersid}}</view>
+                <view class="cell-status" >{{item.orderstates}}</view>
+              </view>
+            <navigator class="cell-item" hover-class="none" url="" role="navigator">
+              <view class="">
+                <image class="good-thumb" src="{{item.orderpicture}}">
+                </image>
+                <view class="item-content">
+                  <view class="content-name">
+                   {{item.ordername}}
+                  </view>
+                  <view class="content-attr">
+                  规格：{{item.orderspec}}
+                  </view>
+                  <view class="content-count">￥{{item.orderprice}}
+                    <view class="content-amount">x{{item.ordernumber}}</view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+            <view class="cell-count">
+              <view class="count-amount">共{{item.ordernumber}}个商品</view>
+              <view class="count-price">￥{{item.ordertotal}}</view>
+              <view class="count-carriage">运费：<text>￥{{item.orderferight}}</text></view>
+            </view>
+            <view class="cell-btn">
+            <button bindtap='pay' class="btn-order btn-solid-red">去支付</button>
+            <button class="btn-order btn-hollow-gray" bindtap="CancelOrder" data-id="{{item.orderid}}">取消订单</button>
+            </view>
+            </view>
+           </view>
+          </block>
+        </scroll-view>
+    </swiper-item>
+
+    <!--待接单 -->
+    <swiper-item class="out">
+      <scroll-view scroll-y>
+        <block wx:for="{{goods}}">
+        <view wx:if="{{item.orderstate==1}}">
+          <view class="order-cell item" id="item1">
+              <view class="cell-count">
+                <view class="count-amount">订单号：{{item.ordersid}}</view>
+                <view class="cell-status">{{item.orderstates}}</view>
+              </view>
+            <navigator class="cell-item" hover-class="none" url="" role="navigator">
+              <view class="">
+                <image class="good-thumb" src="{{item.orderpicture}}">
+                </image>
+                <view class="item-content">
+                  <view class="content-name">
+                   {{item.ordername}}
+                  </view>
+                  <view class="content-attr">
+                  规格：{{item.orderspec}}
+                  </view>
+                  <view class="content-count">￥{{item.orderprice}}
+                    <view class="content-amount">x{{item.ordernumber}}</view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+            <view class="cell-count">
+              <view class="count-amount">共{{item.ordernumber}}个商品</view>
+              <view class="count-price">￥{{item.ordertotal}}</view>
+              <view class="count-carriage">运费：<text>￥{{item.orderferight}}</text></view>
+            </view>
+            <view class="cell-btn">
+            <button bindtap='pay' class="btn-order btn-solid-red">去支付</button>
+            <button class="btn-order btn-hollow-gray">取消订单</button>
+            </view>
+            </view>
+           </view>
+          </block>
+       </scroll-view>
+    </swiper-item>
+
+    <!--待收货 -->
+    <swiper-item class="out">
+      <scroll-view scroll-y>
+           <block wx:for="{{goods}}">
+        <view wx:if="{{item.orderstate==2}}">
+          <view class="order-cell item" id="item1">
+              <view class="cell-count">
+                <view class="count-amount">订单号：{{item.ordersid}}</view>
+                <view class="cell-status">{{item.orderstates}}</view>
+              </view>
+            <navigator class="cell-item" hover-class="none" url="" role="navigator">
+              <view class="">
+                <image class="good-thumb" src="{{item.orderpicture}}">
+                </image>
+                <view class="item-content">
+                  <view class="content-name">
+                   {{item.ordername}}
+                  </view>
+                  <view class="content-attr">
+                  规格：{{item.orderspec}}
+                  </view>
+                  <view class="content-count">￥{{item.orderprice}}
+                    <view class="content-amount">x{{item.ordernumber}}</view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+            <view class="cell-count">
+              <view class="count-amount">共{{item.ordernumber}}个商品</view>
+              <view class="count-price">￥{{item.ordertotal}}</view>
+              <view class="count-carriage">运费：<text>￥{{item.orderferight}}</text></view>
+            </view>
+            <view class="cell-btn">
+            <button bindtap='pay' class="btn-order btn-solid-red">去支付</button>
+            <button class="btn-order btn-hollow-gray">取消订单</button>
+            </view>
+            </view>
+           </view>
+          </block>         
+      </scroll-view>
+    </swiper-item>
+
+    <!--全部订单 -->
+    <swiper-item class="out">
+      <scroll-view scroll-y>
+        <block wx:for="{{goods}}">
+          <view class="order-cell item" id="item1">
+              <view class="cell-count">
+                <view class="count-amount">订单号：{{item.ordersid}}</view>
+                <view class="cell-status">{{item.orderstates}}</view>
+              </view>
+            <navigator class="cell-item" hover-class="none" url="" role="navigator">
+              <view class="">
+                <image class="good-thumb" src="{{item.orderpicture}}">
+                </image>
+                <view class="item-content">
+                  <view class="content-name">
+                   {{item.ordername}}
+                  </view>
+                  <view class="content-attr">
+                  规格：{{item.orderspec}}
+                  </view>
+                  <view class="content-count">￥{{item.orderprice}}
+                    <view class="content-amount">x{{item.ordernumber}}</view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+            <view class="cell-count">
+              <view class="count-amount">共{{item.ordernumber}}个商品</view>
+              <view class="count-price">￥{{item.ordertotal}}</view>
+              <view class="count-carriage">运费：<text>￥{{item.orderferight}}</text></view>
+            </view>
+            <view class="cell-btn">
+            <button bindtap='pay' class="btn-order btn-solid-red">去支付</button>
+            <button class="btn-order btn-hollow-gray">取消订单</button>
+            </view>
+            </view>
+          </block>
+      </scroll-view>
+    </swiper-item>
+    <view>
+      <modal title="扫码支付" cancel-text="关闭" confirm-text="确定" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
+        <view>
+          <image src="../images/gzh.jpg" class="pay-image"></image>
+        </view>
+      </modal>
+    </view>
+  </swiper>

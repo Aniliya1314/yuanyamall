@@ -1,0 +1,15 @@
+<view class="navs">
+<view class="nav-item">
+<image src="../images/wuliu.png" class="nav-image" catchtap="log"></image>
+<text class="text" style="font-size:26rpx">交易物流</text>
+</view>
+<view class="nav-item"> 
+<image src="../images/huodong.png" class="nav-image" catchtap="acti"></image>
+<text class="text" style="font-size:26rpx">活动精选</text>
+</view>
+<view class="nav-item">
+<image src="../images/tongzhi.png" class="nav-image" catchtap="notice"></image>
+<text class="text" style="font-size:26rpx">通知</text>
+</view>
+</view>
+<view class="container"></view>

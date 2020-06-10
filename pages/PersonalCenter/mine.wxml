@@ -1,0 +1,129 @@
+<!--pages/mine/mine.wxml-->
+<view class="userinfo">
+  <view class="userinfo-avatar">
+    <open-data  type="userAvatarUrl"></open-data>
+  </view>
+  <view style='bottom:5px;position:relative;'>
+    <open-data type="userNickName"></open-data>
+  </view>
+    <view style='margin:5px 0px 0px 130px;'>
+  <image src="../PersonalCenter/images/two.png" style='width:22px;height:22px;' />
+  </view>
+</view>
+<view class="priline"></view>
+<text class="myorder-text">我的订单</text>
+<view class="line"></view>
+<view class="navs">
+    <!--待付款页面 -->
+    <view class="nav-item" catchtap="nopay">
+      <view class="badge" wx:if="{{nopay>0}}">{{nopay}}</view>
+        <image src="../PersonalCenter/images/daifukuan.png" class="nav-image" />
+        <text>待付款</text>
+    </view>
+
+  <!--待接单页面 -->
+  <view class="nav-item" catchtap="nosend">
+      <view class="badge" style="margin-left:185rpx;" wx:if="{{nosend>0}}">{{nosend}}</view>
+        <image src="../PersonalCenter/images/daijiedan.png" class="nav-image" />
+        <text>待接单</text>
+    </view>
+
+  <!--待发货页面 -->
+  <view class="nav-item" catchtap="sended">
+      <view class="badge" style="margin-left:379rpx;" wx:if="{{sended>0}}">{{sended}}</view>
+        <image src="../PersonalCenter/images/daishouhuo.png" class="nav-image" />
+        <text>待发货</text>
+    </view>
+
+  <!--全部订单页面 -->
+  <view class="nav-item" catchtap="allorder">
+      <view class="badge" style="margin-left:562rpx;" wx:if="{{msg>0}}">{{msg}}</view>
+        <image src="../PersonalCenter/images/dingdan.png" class="nav-image" />
+        <text>全部订单</text>
+  </view>
+  <view class="priline"></view>
+</view>
+<text class="myorder-text">我的工具</text>
+<view class="line"></view>
+<view class="navs">
+    <view class="nav-item" catchtap="cardpackage">
+      <image src="../PersonalCenter/images/kaquan.png" class="nav-image" />
+      <text>余额/卡券</text>
+    </view>
+    <view class="nav-item" catchtap="zeroget">
+      <image src="../PersonalCenter/images/scj.png" class="nav-image" />
+      <text>收藏夹</text>
+    </view>
+     <view class="nav-item" catchtap="groupget">
+      <image src="../PersonalCenter/images/vip.png" class="nav-image" />
+      <text>会员俱乐部</text>
+    </view>
+    <view class="nav-item" catchtap="identitycard">
+      <image src="../PersonalCenter/images/zhengjian.png" class="nav-image" style="height:40rpx"/>
+      <text>清关证件</text>
+    </view>
+    <view class="nav-item" catchtap="messagecenter">
+      <image src="../PersonalCenter/images/xiaoxi.png" class="nav-image" />
+      <text>我的信息</text>
+    </view>
+    <view class="nav-item" catchtap="helporserver">
+      <image src="../PersonalCenter/images/kefu.png" class="nav-image" />
+      <text>帮助与客服</text>
+    </view>
+     <view class="nav-item" catchtap="scoremarket">
+      <image src="../PersonalCenter/images/location.png" class="nav-image" />
+      <text>收货地址</text>
+    </view>
+    <view class="nav-item" catchtap="vip">
+      <image src="../PersonalCenter/images/set.png" class="nav-image" />
+      <text>设置</text>
+    </view>
+</view>
+<view class="priline"></view>
+<!--猜你喜欢 start-->
+<view class="welfare-container"> 
+  <view  style="display:block;font-size:33rpx;margin:15px 150px;">猜你喜欢</view>
+  <view class="category-title">
+  </view>  
+  <scroll-view scroll-y="true">
+      <view class="welfares">
+       <block wx:for="{{goodsWelfarelist}}" wx:key="goodsid">
+          <view class="welfares-good" catchtap="catchTapCategory" data-name="{{item.goodsname}}" data-goodsid="{{item.goodsid}}">
+            <view>
+              <image src="{{item.goodsimgUrl}}" class="welfares-image" mode="widthFix"/> 
+            </view>
+            <view class="product-name">
+              {{item.goodsname}}
+            </view>
+            <view class="product-price-wrap">
+              <p class="product-price-new">￥{{item.goodsprice}}</p>  
+              <p class="product-price-old">￥{{item.goodsprivilegePrice}}</p> 
+              <p class="discount">{{item.discount}}折</p>  
+            </view>
+          </view>
+        </block> 
+         <block wx:for="{{goodslist}}" wx:key="goodsid">
+          <view class="welfares-good" catchtap="catchTapCategory" data-name="{{item.goodsname}}" data-goodsid="{{item.goodsid}}">
+            <view>
+              <image src="{{item.goodsimagUrl}}" class="welfares-image" mode="widthFix"/> 
+            </view>
+            <view class="product-name">
+              {{item.goodsname}}
+            </view>
+            <view class="product-price-wrap">
+              <p class="product-price-new">￥{{item.goodsprice}}</p>  
+              <p class="product-price-old">￥{{item.goodsprivilegePrice}}</p> 
+              <p class="discount">{{item.discount}}折</p>  
+            </view>
+            
+          </view>
+        </block> 
+      </view>
+  </scroll-view>  
+</view>   
+<!--猜你喜欢 end-->
+
+ <view class="weui-loadmore" hidden="{{hidden}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">努力加载中</view>
+  </view>  

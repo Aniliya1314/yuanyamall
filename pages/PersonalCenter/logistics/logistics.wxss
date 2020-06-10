@@ -1,0 +1,174 @@
+page {
+  font-size: 0.8rem;
+  background: whitesmoke;
+}
+
+.topExpress {
+  width: 720rpx;
+  height: 489rpx;
+  background: white;
+  margin: 10rpx auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.topExpress-left {
+  width: 100rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topExpress-right {
+  color: #333;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20rpx 5rpx;
+}
+
+.topExpress-right-middle {
+  font-size: 0.8rem;
+}
+
+.topExpress-right-bottom {
+  color: #666;
+}
+.company{
+  
+  height:100px;
+   width: 720rpx;
+  margin: 10rpx auto;
+  background: white;
+  border-radius: 5px;
+  padding: 10rpx 0;
+}
+.express-container {
+  width: 720rpx;
+  margin: 10rpx auto;
+  background: white;
+  border-radius: 5px;
+  padding: 10rpx 0;
+}
+
+.express-item {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+}
+
+.express-middle-axis {
+  display: flex;
+  width: 48rpx;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.express-left-date {
+  display: flex;
+  width: 200rpx;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.online-top-closing {
+  width: 1px;
+  height: 80rpx;
+  background: #d7d7d7;
+}
+
+.dot-closing {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-top: 6rpx;
+  margin-bottom: 6rpx;
+
+}
+
+.dot-shou {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #f0145a;
+  font-size: 28rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.online-bottom {
+  width: 1px;
+  height: 80rpx;
+  background: #999;
+}
+
+.express-right {
+  display: flex;
+  flex-grow: 1;
+  width:200rpx;
+  flex-direction: column;
+  margin: 0 20rpx;
+  justify-content: center;
+}
+.avatar{
+width:15px;height:15px;margin:10px;
+}
+.order_status{
+ background-color:#f0145a; 
+ height:70px;
+
+}
+.status_tip{
+  color:white;
+margin-left:15px;
+padding-top:20rpx;
+font-size:35rpx;
+
+}
+.status_detail{
+  color:white;
+margin-left:15px;
+padding-top:15rpx;
+font-size:25rpx;
+}
+.goods{
+  font-size:28rpx;
+  text-align:center;
+}
+.font1{
+  line-height:35px;margin-left:15px;
+  font-size:25rpx;
+}
+.font2{
+ line-height:35px;
+font-size:25rpx;
+padding-left:60rpx;
+}
+.font3{
+  font-size:38rpx;line-height:15px;
+}
+.font4{
+  font-size:30rpx;
+  line-height:10px;
+  color:red;
+
+}
+.avatar2{
+ width:55px;
+height:55px;
+margin:8px 13px 0px 25px;
+
+}
+
+.express_detail{
+  display:flex;
+height:35%;
+background-color:rgb(235, 235, 235);
+
+}

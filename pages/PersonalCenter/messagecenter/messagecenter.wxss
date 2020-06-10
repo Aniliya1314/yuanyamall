@@ -1,0 +1,26 @@
+.navs {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15rpx 0;
+	text-align: center;  /*  或者 display: flex; */
+	box-sizing: border-box
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  flex:0 0 33%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}
+.nav-item .nav-image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 5rpx;
+}
+.nav-item text {
+  margin-top: 20rpx;
+  font-size: 38rpx;
+  color: rgb(88, 87, 87);
+}

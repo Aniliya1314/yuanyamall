@@ -1,0 +1,37 @@
+/* pages/PersonalCenter/mesorder/mesorder.wxss */
+/* pages/order/order.wxss */
+.tab-content1
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab-image
+{
+  width: 50%;
+  margin-top: 130rpx;
+  margin-bottom: 50rpx;
+}
+.swiper-tab{
+    width: 100%;
+    border-bottom: 2rpx solid #ccc;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.swiper-tab-item{
+    width: 30%;
+    color:#434343;
+    font-size: 14px;
+}
+.active{
+    color:#F65959;
+    border-bottom: 4rpx solid #F65959;
+}
+swiper{
+  text-align: center;
+  height:100vh;
+}

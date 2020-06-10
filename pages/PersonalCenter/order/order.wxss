@@ -1,0 +1,183 @@
+/* pages/order/order.wxss */
+page {
+  height: 100%;
+  flex: 1;
+  background-color: #f8f8f8;
+  font-size: 37.44rpx;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  overflow: hidden;
+}
+view {
+display:block;
+}
+page{
+  font-size: 37.44rpx;
+}
+.tab-content1
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab-image
+{
+  width: 50%;
+  margin-top: 130rpx;
+  margin-bottom: 50rpx;
+}
+.swiper-tab{
+    width: 100%;
+    border-bottom: 2rpx solid #ccc;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.swiper-tab-item{
+    width: 30%;
+    color:#434343;
+    font-size: 14px;
+}
+.active{
+    color:#F65959;
+    border-bottom: 4rpx solid #F65959;
+}
+swiper{
+  text-align: center;
+  height:100vh;
+}
+.box{
+  display:flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  padding:10rpx 10rpx;
+  margin: 30rpx 0rpx;
+  height:30%;
+  background: #e9e3e3;
+  font-size: 30rpx;
+}
+.item-content {
+    margin-left: 212.35rpx;
+    margin-right: 17.84rpx;
+    height: 175.77rpx;
+    position: relative;
+}
+.content-name {
+    font-size: 27.44rpx;
+    line-height: 32.81rpx;
+    white-space: normal;
+    display:flex;
+    margin-left:-5rpx; 
+    overflow: hidden;
+    text-align: left;
+}
+.content-attr {
+    margin-top: 11.72rpx;
+    font-size: 27.44rpx;
+    color: #a0a0a0;
+    line-height: 32.81rpx;
+    white-space: normal;
+    overflow: hidden;
+    text-align: left;
+}
+.content-count {
+    position: absolute;
+    font-size: 27.44rpx;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+}
+.content-amount {
+    float: right;
+}
+.order-cell {
+    margin-top: 27.44rpx;
+    background: #fff;
+    padding: 0 16.41rpx;
+    overflow: hidden;
+}
+.out {
+  background: #ddd;
+}
+.out scroll-view{
+    height: 91%;
+}
+.out .item {
+  height: auto;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+}
+.cell-status {
+    text-align: right;
+    color: #ff2d4b;
+    font-size: 30rpx;
+}
+.cell-left{
+    text-align: left;
+    padding: 23.44rpx 18.74rpx;
+    color: gray;
+    font-size: 30rpx;
+}
+.cell-item {
+    padding-bottom: 35.15rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height:175.77rpx;
+}
+.good-thumb {
+width:175.77rpx;
+height:175.77rpx;
+border:1px solid #d6d6d6;
+float:left;
+margin-left:18.74rpx;
+}
+.cell-count {
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    overflow: hidden;
+    padding: 23.44rpx 18.74rpx;
+}
+.count-amount {
+    float: left;
+    font-size: 28rpx;
+}
+.count-carriage {
+    float: right;
+    font-size: 28rpx;
+}
+.count-price {
+    float: right;
+    margin-left: 28.12rpx;
+    color: #ff2b4d;
+    font-size: 28rpx;
+}
+.count-price::before {
+    content: "实付：";
+    color: #000;
+}
+.cell-btn {
+    padding: 17.58rpx 18.74rpx;
+    overflow: hidden;
+}
+.image {
+  width: 150rpx;
+  height: 120rpx;
+  margin: 10rpx 20rpx 0rpx 0rpx;
+  float: left;
+}
+::-webkit-scrollbar
+{
+width: 0px;
+height: 100%;
+background-color: rgb(187, 180, 180);
+}
+.pay-image{
+  width: 551rpx;
+  height: 551rpx;
+}
