@@ -1,0 +1,45 @@
+<!--pages/ShoppingCart/sc.wxml-->
+<view class="container">
+  <view class="goods-list">
+    <view wx:for="{{goods}}"  data-title="{{item.goodsTitle}}" data-url="{{item.url}}">
+      <view class="thestore">
+            <image class='storeimg' src="{{item.storepicture}}" mode="aspectFill"/>
+            <view style='display:block;width:200px;'>
+            <text class="storeName">{{item.storeName}}</text>
+            <view class="little_tips">
+          <image class="store-location" src="/image/shoppingcart-img/location_red.png"></image><text style=' font-size: 13px;color: #545454;'>{{item.storen}}</text></view>
+            </view>
+            <view bindtap='goodsdel' style='font-size:28rpx;margin:10px 5px 0px 70px;'>删除</view>
+      </view>
+      <view class="goods-item">
+        <icon wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}"/>
+        <icon wx:else type="circle" size="20" bindtap="bindCheckbox" data-index="{{index}}"/>
+        <view>
+            <image class="goods-image" src="{{item.picture}}" mode="aspectFill"/>
+        </view>
+        <view class="goods-text">
+            <text class="goods-title">{{item.goodsTitle}}</text>
+                <view class="goods-subtitle">
+                 <text class="goods-price">￥ {{item.sum}}</text>
+                 <text bindtap="bindMinus" data-index="{{index}}">-</text>
+                 <text>{{item.goodsNumber}}</text>
+                 <text bindtap="bindPlus" data-index="{{index}}">+</text>
+                </view>
+        </view>
+        </view>
+    </view> 
+  </view>
+</view>
+
+<view class="goods-footer">
+    <view bindtap="bindSelectAll">
+        <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="22"/>
+        <icon wx:else type="circle" size="22" />
+        <text class="text">全选</text>
+    </view>
+    <view> 
+           <text class="totalPrice">{{total}}</text> 
+           <text class="text1">(不含运费)</text>
+    </view>
+    <view class="button"  bindtap="tobuy">立即结算</view>
+</view>

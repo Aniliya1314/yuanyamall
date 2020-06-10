@@ -1,0 +1,75 @@
+<view class="live-center">
+  <view class="livetype">
+    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+      <text wx:for="{{livetype}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="liveTap">{{item}}</text>  
+    </scroll-view>
+  </view>
+  <!-- 直播介绍区域-->
+<view class="page-body" animation="{{animationData}}" bindtap="liveTap" catchtap="liveol">
+<block wx:for-items="{{livers}}">
+  <block wx:if="{{item.livestatus=='livenow'}}">
+  <image class="live-img" src="{{item.imgurl}}" bindfocus="goLive">
+    <!-- 右方区域  -->
+    <cover-view class="rcover">
+      <cover-view class="right-icon">
+        <cover-image class="icon" src='/image/live/people.png'>观看人数</cover-image>
+        <cover-view class="text">{{item.people}}人</cover-view>
+      </cover-view>
+      <cover-view class="right-icon">
+        <cover-image class="icon" src='/image/live/likes.png'>点赞</cover-image>
+        <cover-view class="text">{{item.likes}}</cover-view>
+      </cover-view>
+    </cover-view>
+    <!--上方主播介绍-->
+    <cover-view class="tcover">
+      <cover-view class="top-anchor">
+        <cover-image class="userinfo-avatar" src='{{item.anchorimg}}'>主播头像</cover-image>
+        <cover-view class="anchortext">{{item.anchorname}}</cover-view>
+      </cover-view>
+      <cover-view class="top-address">
+        <cover-image class="address-icon" src='/image/shoppingcart-img/location_red.png'>地址</cover-image>
+        <cover-view class="addresstext">{{item.address}}</cover-view>
+      </cover-view>
+    </cover-view>
+    <!--下方直播名-->
+    <cover-view class="bcover">
+      <cover-view class="btext">{{item.livename}}</cover-view>
+    </cover-view>
+    <!--中间播放-->
+    <cover-view class="ccover">
+      <cover-image class="paly-icon" src='/image/live/play.png'>播放</cover-image>
+    </cover-view>
+  </image>
+  </block>
+  </block>
+</view>
+<!-- 即将播放-->
+  <view class="nextlive">
+    <view class="next-live">
+      <text>即将开播</text>
+    </view>
+  </view>
+  <view class="page-body">
+ <block wx:for-items="{{livers}}">
+  <block wx:if="{{item.livestatus=='livenext'}}">
+    <view class="nextitem">    
+      <image class="next-liveimg" src="{{item.imgurl}}"></image>      
+      <text class="tname">{{item.livename}}</text>
+      <view class="useritem">
+      <image class="userinfo-avatar anchorimg" src="{{item.anchorimg}}"></image>      
+      <text class="tanchor">{{item.anchorname}}</text>
+      <image class="taddress-icon" src='/image/shoppingcart-img/location_red.png'></image>
+      <text class="taddress">{{item.address}}</text>
+      </view>
+      <text class="tdescribe">{{item.livedescribe}}</text>
+      <view class="tdivision">
+        <text class="livetime">今天  {{item.time}} 开播</text>
+        <text class="twangts">{{item.wangts}}人想看</text>
+        <button class="tbutton">开播提醒</button>
+      </view>
+    </view>
+    </block>
+    </block>
+  </view>
+  
+</view>

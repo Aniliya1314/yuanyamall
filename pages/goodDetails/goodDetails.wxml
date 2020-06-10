@@ -1,0 +1,189 @@
+<!-- banner -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode="widthFix"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<scroll-view scroll-y="true">
+  <view class='hr'></view>
+  <view class="detail">
+    <view class="row">
+      <text class="price">￥5300~5800</text>
+      <view class="origin">￥6800</view>
+      <view class="detail_tip">活动价</view>
+    </view>
+    <view class="row">
+      <view class="star_tip">星标产品</view>
+      <text class="goods_intro"> Huawei/华为 Mate 20 Pro </text>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class='row'>
+    <text class="intro">物流</text>
+    <view>
+      <view>
+        <text class="intro">官方直邮，中国发货</text>
+      </view>
+      <view class="little_tips">支付成功后，预计五到十天发货</view>
+    </view>
+    <view class='arrow'></view>
+  </view>
+  <view class='row'>
+    <text class="intro">运费</text>
+    <view>
+      <text class="intro">包邮</text>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view>
+    <text class="intro" bindtap="toggleDialog">选择参数</text>
+    <view class='arrow' style='padding'></view>
+  </view>
+  <view class='hr'></view>
+  <!-- sku选择
+  <text bindtap="toggleDialog">请选择购买数量</text>
+  <view class="separate"></view>-->
+  <view class="store-head">
+    <view class='shop_heigh'>
+      <image src="/image/shoppingcart-img/huawei.png" class="avatar"></image>
+    </view>
+    <view class='store-name'>
+      <view class='store-title'>
+        <text class='store-title'>华为官方旗舰店</text>
+      </view>
+      <view class='store-tips'>
+        <view class="little_tips">
+          <image class="store-location" src="/image/shoppingcart-img/location_red.png"></image>中国大陆</view>
+      </view>
+      <view class='store-evaluation'>
+        <view>
+          <text class="little_tip">最近销量</text>
+          <view class="little_tips">102</view>
+        </view>
+        <view class='hr_column'></view>
+        <view>
+          <text class="little_tip_2">粉丝</text>
+          <view class="little_tips">102</view>
+        </view>
+        <view class='hr_column'></view>
+        <view>
+          <text class="little_tip">综合评分</text>
+          <view class="little_tips">4.2</view>
+        </view>
+        <view class='hr_column'></view>
+        <view>
+          <view class="enter_tip" style='margin-top:1px;'>
+            <image class="store-location" src="/image/shop.png"></image>
+            进店看看</view>
+          <view class="enter_tip2" style='margin-top:1px;'>
+            <image class="store-location" src="/image/like.png"></image>
+            收藏店铺</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='hr_nav'>
+    <text class='nav_tips'>-- 评价 --</text>
+  </view>
+
+  <view>
+    <view class='comment_nav'>
+      <view class='comment-title'>买家评价</view>
+      <view class='comment-title2'>查看全部</view>
+      <image src="/image/rightarrow.png" class="avatar2"></image>
+    </view>
+    <view class='hr3'></view>
+    <view class='scroll-x'>
+    <scroll-view  scroll-x>
+      <view class='scroll-x'>
+        <block wx:for-items="{{comment}}" wx:key="name">
+          <view class='commit_detail'>
+          <view style='display:block;'>
+            <view class='comment_top'>
+              <image src="{{item.headimg}}" class="avatar3"></image>
+              <view class='comment-tip'>{{item.nikename}}</view>
+            </view>
+            <view>
+              <view class='commit_font'>{{item.detail}}</view>
+            </view>
+          </view>
+          
+          </view>
+        </block>
+      </view>
+    </scroll-view></view>
+  </view>
+ 
+
+  <view class='hr_nav'>
+    <text class='nav_tips'>-- 详情 --</text>
+  </view>
+  <block wx:for-items="{{detailImg}}" wx:key="name">
+    <image class="image_detail" src="{{item}}" mode="widthFix" />
+  </block>
+  <view class='hr_nav'>
+    <text class='nav_tips'>-- 猜你喜欢 --</text>
+  </view>
+
+  <view class="temp"></view>
+</scroll-view>
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <view class='img_tips' bindtap="toStore">
+    <image src="/image/store.png" />
+    <text class="little_tip_2">店铺</text>
+  </view>
+  <view class='img_tips'>
+    <image bindtap="toCar" src="/image/contact.png" />
+    <text class="little_tip_2">客服</text>
+  </view>
+  <view class='img_tips' bindtap="myshopCar">
+    <image bindtap="addLike" src="/image/shoppingcart-uncheck.png" />
+    <text class="little_tip_2">购物车</text>
+  </view>
+  <button class="button-green" formType="submit" bindtap='showModal' id="0">加入购物车</button>
+  <button class="button-red" bindtap="showModal" formType="submit" id="1">立即购买</button>
+</view>
+
+<view class='mask-layer' wx:if="{{showPop}}" bindtap='hideModal'></view>
+<view class='pop-add-cart pop-common' wx:if="{{showPop}}" animation='{{animationData}}'>
+  <view style='display:flex;border-bottom:1px solid #ddd;'>
+    <view style="margin:10px 10px 10px 5px;">
+        <image src="https://img.alicdn.com/imgextra/i3/2838892713/O1CN01llOcDQ1Vub1oNk0Vg_!!0-item_pic.jpg_430x430q90.jpg" style="width:100px;height:113px;border:1px solid #ddd;"/>
+    </view>
+    <view style="display:grad">
+      <view style="display:flex;margin-top:12px">
+        <view style="color:red;font-size:17px">￥</view><view style="color:red;font-size:24px">5300</view>
+      </view>
+      <view style="font-size:14px;color:#777">库存充足</view>
+    </view>
+  </view>
+  <scroll-view class='body' scroll-y='true'>
+    <view style='display:grad;border-bottom:1px solid #ddd;'>
+      <view><text>规格</text></view>
+      <view style='display:flex;flex-wrap:wrap;margin:3px 5px;' bindtap="boxchange">
+        <view class="tip {{num==1?'active':''}}" data-num="1">官方标配</view>
+        <view class="tip {{num==2?'active':''}}" data-num="2">套餐二</view>
+        <view class="tip {{num==3?'active':''}}" data-num="3">套餐三</view>
+        <view class="tip {{num==4?'active':''}}" data-num="4">套餐四</view>
+        <view class="tip {{num==5?'active':''}}" data-num="5">套餐五</view>
+        <view class="tip {{num==6?'active':''}}" data-num="6">套餐六</view>
+      </view>
+    </view>
+    <view style='display:grad;border-bottom:1px solid #ddd;margin-bottom:3px;' bindtap="boxchange2">
+      <view><text>颜色</text></view>
+      <view style='display:flex;flex-wrap:wrap;margin:3px 5px;'>
+        <view class="tip {{icon==1?'active':''}}" data-icon="1">翡冷翠</view>
+        <view class="tip {{icon==2?'active':''}}" data-icon="2">宝石蓝</view>
+        <view class="tip {{icon==3?'active':''}}" data-icon="3">极光色</view>
+        <view class="tip {{icon==4?'active':''}}" data-icon="4">亮黑色</view>
+        <view class="tip {{icon==5?'active':''}}" data-icon="5">樱粉金</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view style='margin-top:3px;'>
+    <button style="width:100%;background-color:#f0145a;" bindtap="fook">确定</button>
+  </view>
+</view>

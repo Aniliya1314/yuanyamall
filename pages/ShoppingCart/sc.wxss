@@ -1,0 +1,163 @@
+/*pages/ShoppingCart/sc.wxml*/
+ .container 
+ { 
+   padding: 0rpx;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-between;
+    box-sizing: border-box;
+ }
+ .thestore{
+    display: flex;
+    width: 100%;
+    height: 55px;
+    background-color: white;
+    border-bottom: solid #ccc 1px;
+    flex-direction: row;
+}
+.store-location{
+  width:28rpx;
+  height:28rpx;
+}
+.storeName{
+   font-size: 13px;
+   color: #545454;
+   margin:3px 5px;
+}
+.storeimg{
+  width:50rpx;
+ height:50rpx;
+ margin:25rpx;
+}
+.store-nationality{
+ width:50rpx;
+ height:50rpx;
+}
+/*整体列表*/
+.goods-list 
+{ 
+    width:100%;
+    flex-direction: column; 
+    padding: 0rpx 0rpx; 
+    margin-bottom: 70rpx;
+    border-top:7px solid #eee;
+}
+
+/*每行单元格 width属性解决标题文字太短而缩略图偏移 */
+.goods-item 
+ {
+    display: flex; 
+    flex-direction: row; 
+    width:100%; 
+    border-bottom: 7px solid #eee; 
+    padding: 30rpx 0;
+}
+
+/*左部图片*/
+.goods-image 
+{ 
+    width:150rpx; 
+    height:150rpx; 
+}
+
+/*右部描述*/ 
+.goods-text
+ { 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+/*右上部分标题*/
+ .goods-title
+  { 
+    margin: 10rpx; 
+    font-size: 30rpx;
+  }
+
+/*右下部分价格与数量*/ 
+.goods-subtitle 
+{ 
+     font-size: 25rpx;
+     color:darkgray; 
+     padding: 0 20rpx; 
+     display: flex; 
+     flex-direction: row;
+     justify-content:space-between;
+ }
+
+/*价格*/
+.goods-price 
+{ 
+    color: #f60;
+    font-size: 12px;
+ } 
+ /*复选框样式*/
+.goods-list icon 
+{
+    margin-top: 60rpx;
+    margin-right:10rpx;
+    margin-left:15rpx;
+ 
+}
+/*底部按钮*/
+.goods-footer
+ { 
+    width: 100%;
+    height: 90rpx; 
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px #eee solid;
+ }
+
+/*复选框*/
+.goods-footer icon 
+{ 
+  margin-left: 8rpx;
+  position:absolute;
+  bottom: 25rpx;
+ }
+
+ /*全选字样*/  
+   .goods-footer .text
+ { 
+    font-size: 30rpx;
+    position:absolute;
+    bottom: 25rpx;
+	  left:63rpx;
+ }
+ .goods-footer .totalPrice
+ { 
+    font-size: 30rpx;
+    line-height: 10rpx;
+    color: red; 
+    position:absolute;
+    bottom: 58rpx;
+	  right:235rpx;
+ }
+    .goods-footer .text1
+ { 
+    font-size: 25rpx;
+    line-height: 10rpx;
+    position:absolute;
+    bottom: 25rpx;
+	  right:235rpx;
+ }
+
+ /*立即结算按钮*/  
+ .goods-footer .button
+  { 
+    line-height: 80rpx; 
+    text-align: center;
+    width:220rpx; 
+    height: 90rpx;
+    background-color: #f60; 
+    color: white; 
+    font-size: 36rpx;
+    border-radius: 0; border: 0; 
+  }

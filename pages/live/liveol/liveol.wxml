@@ -1,0 +1,3 @@
+<view>
+  <video src="http://xinglinol.cn:666/image/livetest/live_1.mp4" x5-video-player-type="h5" x5-video-player-fullscreen="true" id="yym_video" style="width:{{widths}}px;height:{{heights}}px;" x5-video-orientation="portrait" autoplay loop controls="{{false}}" objectFit="{{fill}}"/>
+</view>

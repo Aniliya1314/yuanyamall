@@ -1,0 +1,35 @@
+{
+  "navigationBarTitleText": "远洋猫",
+  "code": 100,
+  "message": "查询成功",
+  "result": [
+    {
+      "id": 1,
+      "bannerName": "全新上市",
+      "imgUrl": "http://mz.djmall.xmisp.cn/files/banner/20161222/14823895573.png",
+      "clickUrl": "",
+      "seq": 1
+    },
+    {
+      "id": 2,
+      "bannerName": "全球优选团",
+      "imgUrl": "http://pic1.ymatou.com/G02/M07/7C/CE/CgvUBFrNzZaAMSW8AAFEr6p5z9M050_75_52_o.jpg",
+      "clickUrl": "",
+      "seq": 2
+    },
+    {
+      "id": 3,
+      "bannerName": "新会员满减",
+      "imgUrl": "http://m.360buyimg.com/babel/s1120x448_jfs/t16888/181/1508937864/193227/98374bc0/5acdd4c3N8e1f4ba1.jpg",
+      "clickUrl": null,
+      "seq": 3
+    },
+    {
+      "id": 4,
+      "bannerName": "口红",
+      "imgUrl": "http://mz.djmall.xmisp.cn/files/banner/20161222/148238831285.png",
+      "clickUrl": null,
+      "seq": 4
+    }
+  ]
+}

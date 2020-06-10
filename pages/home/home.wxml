@@ -1,0 +1,144 @@
+<!--导入wxSearch.wxml-->
+<import src="/wxSearch/wxSearch.wxml"/>
+<!--search start-->
+<view class="wxSearch-section">
+   <view class="wxSearch-pancel">
+      <input bindfocus="goSearch" value="{{wxSearchData.value}}" class="wxSearch-input" placeholder='  搜索热门单品'/>
+
+      <view class="placeholder">
+        <icon class="weui-icon-search_in-box" type="search" size="20"></icon> 
+      </view> 
+   </view>
+</view>
+<!--引入模板，注意 is="wxSearch" 和模板template name名称相对应-->
+<template is="wxSearch" data="{{wxSearchData}}"/>
+
+<!-- banner start-->
+   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper> 
+<!-- banner end-->
+
+<!--实时热销榜 start-->
+<view class="hots-container"> 
+  <!-- 分类导航 start-->
+  <view class="nav">
+      <view class="icon">
+        <view catchtap="selfSupport">
+          <image src="http://r.photo.store.qq.com/psb?/V1440B7133vLh1/5IgxeMS7yuVLHNLBKd.HGK116GTwGtBT*7V3ddJZUhQ!/r/dL8AAAAAAAAA" style="width:100rpx;height:120rpx;"></image>
+        </view>
+      </view>
+      <view class="icon">
+        <view>
+          <image src="http://r.photo.store.qq.com/psb?/V1440B7133vLh1/wD0PPrU3Tbt8fvZRXIePkKJkKD00SGMCA7v2KTMg3.w!/r/dLYAAAAAAAAA" style="width:100rpx;height:120rpx;"></image>
+        </view>
+      </view>
+      <view class="icon">
+        <view>
+          <image src="http://r.photo.store.qq.com/psb?/V1440B7133vLh1/dHFMxeIBox.2O4yXNmyg3DndHdxSx11EAH7eGfLU.hA!/r/dDcBAAAAAAAA" style="width:100rpx;height:120rpx;"></image>
+        </view>
+      </view>
+      <view class="icon">
+        <view>
+          <image src="http://r.photo.store.qq.com/psb?/V1440B7133vLh1/CJtOi6gwkQJiM*39OMUFAMfevaxBj9ECGPr2Rny62zs!/r/dLkAAAAAAAAA" style="width:100rpx;height:120rpx;"></image>
+        </view>
+      </view>
+      <view class="icon">
+        <view>
+          <image src="http://r.photo.store.qq.com/psb?/V1440B7133vLh1/bByubO7Xh4OqUpdjqn9j5xwNoPxQo7T8FR8a61lP9YI!/r/dDcBAAAAAAAA" style="width:100rpx;height:120rpx;"></image>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="hr"></view> -->
+  <!-- 分类导航 end-->
+</view>
+<!-- 广告栏 start-->
+<view class="advert">
+    <view class="adv">
+      <view>
+         <image src="http://xinglinol.cn:666/image/home/gad.gif" style="width:750rpx;height:250rpx;"></image>
+      </view>
+    </view>
+    <view class="adv">
+      <view>
+         <image src="http://r.photo.store.qq.com/psb?/V1440B7133vLh1/j4BA55aXHShMTHalNgAV7drVSERIwNTZrV1o0tUtPOQ!/r/dL8AAAAAAAAA" style="width:750rpx;height:250rpx;"></image>
+      </view>
+    </view>
+   </view>
+<!-- 广告栏 end-->
+<view class="hots-container"> 
+  <view class="category-title">
+    <text class="title">直播热卖</text>
+    <view class="line_name">
+      <text>HOT ITEMS</text>
+      <text>查看全部 ></text>
+    </view>
+  </view>  
+  <scroll-view scroll-x="true">
+      <view class="goods">
+         <block wx:for-items="{{goodsHotItems}}" wx:key="name">
+          <view class="goods-item" catchtap="catchTapCategory" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+              <image src="{{item.imageurl}}" class="goods-image" />   
+            <text>{{item.name}}</text>
+            <p style="color:#f0145a;">￥{{item.newprice}}</p>  
+          </view>
+        </block> 
+      </view>
+    </scroll-view>   
+</view> 
+<!--实时热销榜 end-->
+
+<!--福利专场 start-->
+<view class="welfare-container"> 
+  <view class="category-title">
+    <text class="title">福利专场</text>
+    <view class="line_name">
+      <text>每天早10晚8准时上新</text>
+    </view>
+  </view>  
+  <scroll-view scroll-y="true">
+      <view class="welfares">
+      <block wx:for="{{goodsWelfarelist}}" wx:key="goodsid">
+          <view class="welfares-good" catchtap="catchTapCategory" data-name="{{item.goodsname}}" data-goodsid="{{item.goodsid}}">
+            <view>
+              <image src="{{item.goodsimgUrl}}" class="welfares-image" mode="widthFix"/> 
+            </view>
+            <view class="product-name">
+              {{item.goodsname}}
+            </view>
+            <view class="product-price-wrap">
+              <p class="product-price-new">￥{{item.goodsprice}}</p>  
+              <p class="product-price-old">￥{{item.goodsprivilegePrice}}</p> 
+              <p class="discount">{{item.discount}}折</p>  
+            </view>
+          </view>
+        </block> 
+         <block wx:for="{{goodslist}}" wx:key="goodsid">
+          <view class="welfares-good" catchtap="catchTapCategory" data-name="{{item.goodsname}}" data-goodsid="{{item.goodsid}}">
+            <view>
+              <image src="{{item.goodsimagUrl}}" class="welfares-image" mode="widthFix"/> 
+            </view>
+            <view class="product-name">
+              {{item.goodsname}}
+            </view>
+            <view class="product-price-wrap">
+              <p class="product-price-new">￥{{item.goodsprice}}</p>  
+              <p class="product-price-old">￥{{item.goodsprivilegePrice}}</p> 
+              <p class="discount">{{item.discount}}折</p>  
+            </view>
+          </view>
+        </block> 
+      </view>
+  </scroll-view>  
+</view>   
+<!--福利专场 end-->
+
+ <view class="weui-loadmore" hidden="{{hidden}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">努力加载中</view>
+  </view>  
+

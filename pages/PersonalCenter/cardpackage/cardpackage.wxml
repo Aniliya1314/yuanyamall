@@ -1,0 +1,58 @@
+<view class="content">
+  <view class="menu">
+  <view>
+   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+  </picker>
+  </view>
+    <view class="{{currentTab==0?'select':'default'}}" data-current="0" bindtap="switchNav">待使用(4)</view>
+    <view class="{{currentTab==1?'select':'default'}}" data-current="1" bindtap="switchNav">已过期(3)</view>
+    <view class="{{currentTab==2?'select':'default'}}" data-current="2" bindtap="switchNav">已使用(1)</view>
+  </view>
+  <view class="hr"></view>
+  <block wx:for="{{coupons}}">
+    <block wx:if="{{currentTab == 0}}">
+      <view class="item">
+        <view class="priceInfo">
+          <view class="price">
+            <text class="rmb">￥</text>
+            <text class="count">{{item.price}}</text>
+          </view>
+          <view class="type">
+            <view>
+             {{item.condition}}
+            </view>
+            <view>{{item.goods}}</view>
+          </view>
+        </view>
+        <view class="desc">
+          <view class="left">{{item.way}}</view>
+          <view class="right">{{item.date}}</view>
+        </view>
+      </view>
+
+    </block>
+    <block wx:else>
+      <view class="item borderColor">
+        <view class="priceInfo">
+          <view class="price textColor">
+            <text class="rmb">￥</text>
+            <text class="count">{{item.price}}</text>
+          </view>
+          <view class="type textColor">
+            <view>
+             {{item.condition}}
+            </view>
+            <view>{{item.goods}}</view>
+          </view>
+        </view>
+        <view class="desc bgColor">
+          <view class="left">{{item.way}}</view>
+          <view class="right">{{item.date}}</view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>
